@@ -25,11 +25,11 @@ namespace Revit_PowerBI_Viewer
             RibbonPanel panel = RibbonPanel(application);
             string thisAsemblyPath = Assembly.GetExecutingAssembly().Location;
 
-            if (panel.AddItem(new PushButtonData("PowerBI Viewer", "PowerBI Viewer", thisAsemblyPath, "Revit_PowerBI_Viewer.Command")) is PushButton button)
+            if (panel.AddItem(new PushButtonData("PowerBI Export", "PowerBI Tools", thisAsemblyPath, "Revit_PowerBI_Viewer.Command")) is PushButton button)
             {
                 button.ToolTip = "View PowerBI reports in Revit";
 
-                Uri uri = new Uri(Path.Combine(Path.GetDirectoryName(thisAsemblyPath), "Resources", "jacobian.ico"));
+                Uri uri = new Uri(Path.Combine(Path.GetDirectoryName(thisAsemblyPath), "Resources", "Revit_PowerBI.png"));
                 BitmapImage bitmap = new BitmapImage(uri);
                 button.LargeImage = bitmap;
 
@@ -44,7 +44,7 @@ namespace Revit_PowerBI_Viewer
 
         public RibbonPanel RibbonPanel(UIControlledApplication a)
         {
-            string tab = "Michal_S";
+            string tab = "PowerBI Export";
             RibbonPanel ribbonPanel = null;
 
             try

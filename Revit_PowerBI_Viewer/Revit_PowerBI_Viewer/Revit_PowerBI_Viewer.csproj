@@ -84,12 +84,17 @@
   <ItemGroup>
     <None Include="Revit_To_PowerBI_Yolo.addin" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Revit_PowerBI.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>Copy "$(TargetDir)Revit_PowerBI_Viewer.dll" "$(AppData)\Autodesk\Revit\Addins\2023"
 
 if exist "$(AppData)\Autodesk\REVIT\Addins\2023" copy "$(ProjectDir)*.addin" "$(AppData)\Autodesk\REVIT\Addins\2023"
-if exist "$(AppData)\Autodesk\REVIT\Addins\2023\Resources" copy "$(ProjectDir)\Resources\jacobian.ico" "$(AppData)\Autodesk\REVIT\Addins\2023\Resources"
+if exist "$(AppData)\Autodesk\REVIT\Addins\2023\Resources" copy "$(ProjectDir)\Resources\Revit_PowerBI.png" "$(AppData)\Autodesk\REVIT\Addins\2023\Resources"
 </PostBuildEvent>
   </PropertyGroup>
 </Project>
