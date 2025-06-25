@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<RevitAddIns>
+	<AddIn Type="Application">
+		<Name> Revit to PowerBI Viewer </Name>
+		<Assembly>Revit_PowerBI_Viewer.dll</Assembly>
+		<AddInId>F407A008-1613-41C2-86DA-641ABD7F31EE</AddInId>
+		<FullClassName>Revit_PowerBI_Viewer.Application</FullClassName>
+		<VendorId>Michal S</VendorId>
+		<VendorDescription>https://github.com/Scigaj</VendorDescription>
+	</AddIn>
+</RevitAddIns>
