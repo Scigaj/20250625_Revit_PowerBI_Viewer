@@ -18,7 +18,7 @@ namespace Revit_PowerBI_Viewer
         {
        
         // Show a simple message box as a placeholder for the Power BI viewer functionality
-        MessageBox.Show("Plugin Created Yo!");
+        MessageBox.Show("Data Published. Yolo");
         return Result.Succeeded;
         
             

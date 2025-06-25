@@ -25,9 +25,9 @@ namespace Revit_PowerBI_Viewer
             RibbonPanel panel = RibbonPanel(application);
             string thisAsemblyPath = Assembly.GetExecutingAssembly().Location;
 
-            if (panel.AddItem(new PushButtonData("PowerBI Export", "PowerBI Tools", thisAsemblyPath, "Revit_PowerBI_Viewer.Command")) is PushButton button)
+            if (panel.AddItem(new PushButtonData("PowerBI Runner", "Publish to PowerBI", thisAsemblyPath, "Revit_PowerBI_Viewer.Command")) is PushButton button)
             {
-                button.ToolTip = "View PowerBI reports in Revit";
+                button.ToolTip = "Publish your Revit data in PowerBI";
 
                 Uri uri = new Uri(Path.Combine(Path.GetDirectoryName(thisAsemblyPath), "Resources", "Revit_PowerBI.png"));
                 BitmapImage bitmap = new BitmapImage(uri);
@@ -44,8 +44,10 @@ namespace Revit_PowerBI_Viewer
 
         public RibbonPanel RibbonPanel(UIControlledApplication a)
         {
-            string tab = "PowerBI Export";
+            string tab = "PowerBI Runner";
+            string panelName = "Export";
             RibbonPanel ribbonPanel = null;
+
 
             try
             {
@@ -58,8 +60,8 @@ namespace Revit_PowerBI_Viewer
             }
 
             try
-            {     
-                a.CreateRibbonPanel(tab, "PowerBI Viewer");
+            {
+                a.CreateRibbonPanel(tab, panelName);
             }
             catch (Exception ex)
             {
@@ -68,7 +70,7 @@ namespace Revit_PowerBI_Viewer
             }
 
             List<RibbonPanel> panels = a.GetRibbonPanels(tab);
-            foreach (RibbonPanel p in panels.Where(p => p.Name == "PowerBI Viewer"))
+            foreach (RibbonPanel p in panels.Where(p => p.Name == "Export"))
             {
                 ribbonPanel = p;            
             }

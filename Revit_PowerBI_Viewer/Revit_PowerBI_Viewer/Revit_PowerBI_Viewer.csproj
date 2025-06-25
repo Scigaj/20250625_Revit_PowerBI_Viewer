@@ -85,9 +85,12 @@
     <None Include="Revit_To_PowerBI_Yolo.addin" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Revit_PowerBI.png">
+    <Resource Include="Resources\Revit_PowerBI.ico">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Revit_PowerBI.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
