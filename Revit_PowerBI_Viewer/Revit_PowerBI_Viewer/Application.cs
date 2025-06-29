@@ -13,6 +13,7 @@ using System.IO;
 
 namespace Revit_PowerBI_Viewer
 {
+    [Autodesk.Revit.Attributes.Transaction(Autodesk.Revit.Attributes.TransactionMode.Manual)]
     public class Application : IExternalApplication
     {
 
