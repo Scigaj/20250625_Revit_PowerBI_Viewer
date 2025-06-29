@@ -13,15 +13,27 @@ namespace Revit_PowerBI_Viewer
     [Transaction(TransactionMode.Manual)]
     public class Command :IExternalCommand
     {
-        
+        public object DialogResilt { get; private set; }
+
         public Result Execute(ExternalCommandData commandData, ref string message, ElementSet elements)
         {
-       
-        // Show a simple message box as a placeholder for the Power BI viewer functionality
-        MessageBox.Show("Data Published. Yolo");
-        return Result.Succeeded;
-        
-            
+            UIApplication uiApp = commandData.Application; 
+            Document doc = uiApp.ActiveUIDocument.Document; // Get the active document
+
+            using (System.Windows.Forms.Form form = new WallsForm(doc)) // Pass the document to the form
+            {
+                if(form.ShowDialog() == DialogResult.OK) // Show the form as a dialog
+                {
+                    return Result.Succeeded; // Return success if the dialog was closed with OK
+                }
+
+                else
+                {
+                    return Result.Cancelled; // Return cancelled if the dialog was closed without OK
+                }
+            }
+
+
         }
     }
 }
