@@ -20,7 +20,7 @@ namespace Revit_PowerBI_Viewer
             UIApplication uiApp = commandData.Application; 
             Document doc = uiApp.ActiveUIDocument.Document; // Get the active document
 
-            using (System.Windows.Forms.Form form = new Revit_PowerBI_Viewer.SQLPowerBIForm(doc)) // Pass the document to the form
+            using (System.Windows.Forms.Form form = new Revit_PowerBI_Viewer.Forms.SQLPowerBIForm(doc)) // Pass the document to the form
             {
                 if(form.ShowDialog() == DialogResult.OK) // Show the form as a dialog
                 {

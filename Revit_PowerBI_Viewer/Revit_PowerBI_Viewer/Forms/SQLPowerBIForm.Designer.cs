@@ -1,4 +1,4 @@
-﻿namespace Revit_PowerBI_Viewer
+﻿namespace Revit_PowerBI_Viewer.Forms
 {
     partial class SQLPowerBIForm
     {
@@ -68,6 +68,7 @@
             this.txt_Search.Name = "txt_Search";
             this.txt_Search.Size = new System.Drawing.Size(887, 38);
             this.txt_Search.TabIndex = 4;
+            this.txt_Search.TextChanged += new System.EventHandler(this.txt_Search_TextChanged);
             // 
             // dg_Categories
             // 
@@ -79,6 +80,7 @@
             this.dg_Categories.RowTemplate.Height = 40;
             this.dg_Categories.Size = new System.Drawing.Size(887, 822);
             this.dg_Categories.TabIndex = 5;
+            this.dg_Categories.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_Categories_CellEndEdit);
             // 
             // btn_Export
             // 
@@ -88,6 +90,7 @@
             this.btn_Export.TabIndex = 6;
             this.btn_Export.Text = "Export Data";
             this.btn_Export.UseVisualStyleBackColor = true;
+            this.btn_Export.Click += new System.EventHandler(this.btn_Export_Click);
             // 
             // SQLPowerBIForm
             // 
@@ -101,6 +104,7 @@
             this.Controls.Add(this.label1);
             this.Name = "SQLPowerBIForm";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.SQLPowerBIForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dg_Categories)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
